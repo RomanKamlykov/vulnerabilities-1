@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/cerulean/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+<!--navbar-->
+<%- include('../partials/navbar'); %>
+
+<!--form-->
+<div class="container pb-5" style="padding-top: 4.5rem;">
+    <form action="/settings" method="post">
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" name="xssProtection" role="switch" id="checkboxXss" <% if (xssProtection) { %><%= 'checked' %><% } %>>
+            <label class="form-check-label" for="checkboxXss">XSS protection</label>
+        </div>
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" name="csrfProtection" role="switch" id="checkboxCsrf" <% if (csrfProtection) { %><%= 'checked' %><% } %>>
+            <label class="form-check-label" for="checkboxCsrf">CSRF protection</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+    </form>
+</div>
+
+</body>
+</html>

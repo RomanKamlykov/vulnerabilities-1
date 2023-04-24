@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Help</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/cerulean/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+<!--navbar-->
+<%- include('../partials/navbar'); %>
+
+<div class="container pb-5" style="padding-top: 4.5rem;">
+    <h3>XSS vulnerability</h3>
+    <p class="mb-0">To exploit the XSS vulnerability:</p>
+    <ol>
+        <li>go to the settings page</li>
+        <li>uncheck "XSS protection"</li>
+        <li>go to the index page and send the string "&lt;script&gt;alert('XSS');&lt;/script&gt;"</li>
+    </ol>
+    <h3>CSRF vulnerability</h3>
+    <p class="mb-0">To exploit the CSRF vulnerability:</p>
+    <ol>
+        <li>go to the settings page</li>
+        <li>uncheck "CSRF protection"</li>
+        <li>download and open <a href="/csrf.html" download>the file</a></li>
+    </ol>
+</div>
+
+</body>
+</html>
